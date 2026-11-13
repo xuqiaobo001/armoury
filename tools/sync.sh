@@ -126,8 +126,9 @@ SECRET_RE='ghp_[A-Za-z0-9]{20,}|gho_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,
 ADDED=$(git diff --cached --unified=0 | grep '^[+]' | grep -v '^[+][+][+]' || true)
 if [ -n "$ADDED" ] && printf '%s\n' "$ADDED" | grep -qE "$SECRET_RE"; then
   NHIT=$(printf '%s\n' "$ADDED" | grep -cE "$SECRET_RE" || true)
+  NAMES=$(git diff --cached --name-only | tr '\n' ' ')
   git reset --quiet
-  log "SECRET-SCAN BLOCKED: $NHIT suspicious line(s) in files: $(git diff --name-only HEAD 2>/dev/null | tr '\n' ' ')"
+  log "SECRET-SCAN BLOCKED: $NHIT suspicious line(s) in files: $NAMES"
   log "SECRET-SCAN BLOCKED: push 已拒绝, 请移除密钥后重试"
   exit 2
 fi
