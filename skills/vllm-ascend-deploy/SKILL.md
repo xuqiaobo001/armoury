@@ -83,3 +83,7 @@ export HCCL_IF_IP="$LOCAL_IP"
 ## 第五步：自查
 
 生成后核对：方案与各脚本中的 **IP、NODE_RANK、TP/DP/EP 数值、镜像 tag、权重路径**完全一致；`vllm serve` 参数与知识库文档一致；无遗留 `__REPLACE_ME__` 未在"待填写项"中声明。
+
+## 第六步：归档（推荐）
+
+自查通过后，提示用户是否调用 `model-deploy-archive` skill 将该部署包按"场景 × 硬件"归档到 `model_deploy_house` 仓库（推理方案归 `inference/<hardware>/`）。用户同意即执行归档 skill 流程。

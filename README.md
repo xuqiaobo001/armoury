@@ -4,14 +4,14 @@
 
 | 目录 | 内容 | 数量 |
 |---|---|---|
-| `skills/` | Claude Code skills | 8 |
+| `skills/` | Claude Code skills | 9 |
 | `commands/` | agent / 斜杠命令定义 | 18 个 .md |
 | `agents/` | subagent 定义（含本同步机制的 armoury-sync） | 1 个 .md |
 | `knowledge/` | 各项目 memory 知识库 | 3 个项目 |
 | `settings/` | settings.json（已脱敏: TOKEN/KEY/SECRET/PASSWORD 类值替换为 ***REDACTED***） | - |
 | `tools/` | 同步脚本与守护脚本（自举入仓） | - |
 
-**LAST_SYNC: 2026-11-13T04:06:32Z (UTC)**
+**LAST_SYNC: 2026-11-14T09:06:36Z (UTC)**
 
 ## 恢复 / 重启
 
